@@ -1,13 +1,12 @@
 <?php
 require 'init.php';
-// IF USER MAKING LOGIN REQUEST
-if(isset($_POST['email']) && isset($_POST['password'])){
-  $result = $user_obj->loginUser($_POST['email'],$_POST['password']);
+// IF USER MAKING SIGNUP REQUEST
+if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])){
+  $result = $user_obj->singUpUser($_POST['username'],$_POST['email'],$_POST['password']);
 }
 // IF USER ALREADY LOGGED IN
 if(isset($_SESSION['email'])){
   header('Location: profile.php');
-  exit;
 }
 ?>
 <!DOCTYPE html>
@@ -22,15 +21,18 @@ if(isset($_SESSION['email'])){
 </head>
 <body>
   <div class="main_container login_signup_container">
-    <h1>Login</h1>
-    <form action="" method="POST">
+    <h1>Sign Up</h1>
+    <form action="" method="POST" novalidate>
+      <label for="username">Full Name</label>
+      <input type="text" id="username" name="username" spellcheck="false" placeholder="Enter your full name" required>
       <label for="email">Email</label>
       <input type="email" id="email" name="email" spellcheck="false" placeholder="Enter your email address" required>
       <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      <input type="submit" value="Login">
-      <a href="signup.php" class="form_link">Sign Up</a>
-      <div>  
+      <input type="submit" value="Sign Up">
+      <a href="index.php" class="form_link">Login</a>
+    </form>
+    <div>  
       <?php
         if(isset($result['errorMessage'])){
           echo '<p class="errorMsg">'.$result['errorMessage'].'</p>';
@@ -40,8 +42,7 @@ if(isset($_SESSION['email'])){
         }
       ?>    
     </div>
-    </form>
-    
+    <p><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
   </div>
 </body>
 </html>
