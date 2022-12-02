@@ -70,7 +70,7 @@ $get_all_friends = $frnd_obj->get_all_friends($_SESSION['user_id'], true);
                 ?>
             </div>
         </div>
-        <p class="site_link"><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
+        
     </div>
 </body>
 </html>

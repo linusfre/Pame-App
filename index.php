@@ -25,11 +25,11 @@ if(isset($_SESSION['email'])){
     <h1>Login</h1>
     <form action="" method="POST">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" spellcheck="false" placeholder="Enter your email address" required>
+      <input type="email" id="email" name="email" spellcheck="false" placeholder="Gebe deine E-Mail ein" required>
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      <input type="password" id="password" name="password" placeholder="Gebe dein Passwort ein" required>
       <input type="submit" value="Login">
-      <a href="signup.php" class="form_link">Sign Up</a>
+      <a href="signup.php" class="form_link">Registrieren</a>
       <div>  
       <?php
         if(isset($result['errorMessage'])){
