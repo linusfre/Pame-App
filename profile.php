@@ -40,35 +40,35 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
         <nav>
             <ul>
                 <li><a href="profile.php" rel="noopener noreferrer" class="active">Home</a></li>
-                <li><a href="notifications.php" rel="noopener noreferrer">Requests<span class="badge <?php
+                <li><a href="notifications.php" rel="noopener noreferrer">Anfragen<span class="badge <?php
                 if($get_req_num > 0){
                     echo 'redBadge';
                 }
                 ?>"><?php echo $get_req_num;?></span></a></li>
-                <li><a href="friends.php" rel="noopener noreferrer">Friends<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
-                <li><a href="logout.php" rel="noopener noreferrer">Logout</a></li>
+                <li><a href="friends.php" rel="noopener noreferrer">Freunde<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
+                <li><a href="logout.php" rel="noopener noreferrer">Ausloggen</a></li>
             </ul>
         </nav>
         <div class="all_users">
-            <h3>All Users</h3>
+            <h3>Alle User</h3>
             <div class="usersWrapper">
                 <?php
                 if($all_users){
                     foreach($all_users as $row){
                         echo '<div class="user_box">
-                                <div class="user_img"><img src="profile_images/'.$row->user_image.'" alt="Profile image"></div>
+                                <div class="user_img"><img src="profile_images/'.$row->user_image.'" alt="Profilbild"></div>
                                 <div class="user_info"><span>'.$row->username.'</span>
-                                <span><a href="user_profile.php?id='.$row->id.'" class="see_profileBtn">See profile</a></div>
+                                <span><a href="user_profile.php?id='.$row->id.'" class="see_profileBtn">Profil ansehen</a></div>
                             </div>';
                     }
                 }
                 else{
-                    echo '<h4>There is no user!</h4>';
+                    echo '<h4>Es gibt keinen User!</h4>';
                 }
                 ?>
             </div>
         </div>
-        <p class="site_link"><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
+        
     </div>
 </body>
 </html>

@@ -23,7 +23,7 @@ class User{
                     $check_email->execute([$this->user_email]);
 
                     if($check_email->rowCount() > 0){
-                        return ['errorMessage' => 'This Email Address is already registered. Please Try another.'];
+                        return ['errorMessage' => 'Diese E-Mail Adresse ist bereits vergeben!'];
                     }
                     else{
 
@@ -40,15 +40,15 @@ class User{
                         // INSERTING RANDOM IMAGE NAME
                         $sign_up_stmt->bindValue(':user_image',$user_image.'.png', PDO::PARAM_STR);
                         $sign_up_stmt->execute();
-                        return ['successMessage' => 'You have signed up successfully.'];                   
+                        return ['successMessage' => 'Du hast dich erfolgreich registriert'];                   
                     }
                 }
                 else{
-                    return ['errorMessage' => 'Invalid email address!'];
+                    return ['errorMessage' => 'Ungültige E-Mail Adresse'];
                 }    
             }
             else{
-                return ['errorMessage' => 'Please fill in all the required fields.'];
+                return ['errorMessage' => 'Bitte fülle alle notwendigen Felder aus!'];
             } 
         }
         catch (PDOException $e) {
@@ -78,12 +78,12 @@ class User{
                     header('Location: profile.php');
                 }
                 else{
-                    return ['errorMessage' => 'Invalid password'];
+                    return ['errorMessage' => 'Ungültiges Passwort'];
                 }
                 
             }
             else{
-                return ['errorMessage' => 'Invalid email address!'];
+                return ['errorMessage' => 'Ungültige E-Mail Adresse'];
             }
 
         }

@@ -40,17 +40,17 @@ $get_all_req_sender = $frnd_obj->request_notification($_SESSION['user_id'], true
         <nav>
             <ul>
                 <li><a href="profile.php" rel="noopener noreferrer">Home</a></li>
-                <li><a href="notifications.php" rel="noopener noreferrer" class="active">Requests<span class="badge <?php
+                <li><a href="notifications.php" rel="noopener noreferrer" class="active">Anfragen<span class="badge <?php
                 if($get_req_num > 0){
                     echo 'redBadge';
                 }
                 ?>"><?php echo $get_req_num;?></span></a></li>
-                <li><a href="friends.php" rel="noopener noreferrer">Friends<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
+                <li><a href="friends.php" rel="noopener noreferrer">Freunde<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
                 <li><a href="logout.php" rel="noopener noreferrer">Logout</a></li>
             </ul>
         </nav>
         <div class="all_users">
-            <h3>All request senders</h3>
+            <h3>Alle Anfragen</h3>
             <div class="usersWrapper">
                 <?php
                 if($get_req_num > 0){
@@ -63,12 +63,12 @@ $get_all_req_sender = $frnd_obj->request_notification($_SESSION['user_id'], true
                     }
                 }
                 else{
-                    echo '<h4>You have no friend requests!</h4>';
+                    echo '<h4>Du hast keine Freundschaftsanfragen</h4>';
                 }
                 ?>
             </div>
         </div>
-        <p class="site_link"><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
+        
     </div>
 </body>
 </html>

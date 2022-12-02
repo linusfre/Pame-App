@@ -51,36 +51,36 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
             <nav>
             <ul>
                 <li><a href="profile.php" rel="noopener noreferrer">Home</a></li>
-                <li><a href="notifications.php" rel="noopener noreferrer">Requests<span class="badge <?php
+                <li><a href="notifications.php" rel="noopener noreferrer">Anfragen<span class="badge <?php
                 if($get_req_num > 0){
                     echo 'redBadge';
                 }
                 ?>"><?php echo $get_req_num;?></span></a></li>
-                <li><a href="friends.php" rel="noopener noreferrer">Friends<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
+                <li><a href="friends.php" rel="noopener noreferrer">Freunde<span class="badge"><?php echo $get_frnd_num;?></span></a></li>
                 <li><a href="logout.php" rel="noopener noreferrer">Logout</a></li>
             </ul>
         </nav>
             <div class="actions">
                 <?php
                 if($is_already_friends){
-                    echo '<a href="functions.php?action=unfriend_req&id='.$user_data->id.'" class="req_actionBtn unfriend">Unfriend</a>';
+                    echo '<a href="functions.php?action=unfriend_req&id='.$user_data->id.'" class="req_actionBtn unfriend">Freund löschen</a>';
                 }
                 elseif($check_req_sender){
-                    echo '<a href="functions.php?action=cancel_req&id='.$user_data->id.'" class="req_actionBtn cancleRequest">Cancel Request</a>';
+                    echo '<a href="functions.php?action=cancel_req&id='.$user_data->id.'" class="req_actionBtn cancleRequest">Anfrage ablehnen</a>';
                 }
                 elseif($check_req_receiver){
-                    echo '<a href="functions.php?action=ignore_req&id='.$user_data->id.'" class="req_actionBtn ignoreRequest">Ignore</a> 
-                    <a href="functions.php?action=accept_req&id='.$user_data->id.'" class="req_actionBtn acceptRequest">Accept</a>';
+                    echo '<a href="functions.php?action=ignore_req&id='.$user_data->id.'" class="req_actionBtn ignoreRequest">Ignorieren</a> 
+                    <a href="functions.php?action=accept_req&id='.$user_data->id.'" class="req_actionBtn acceptRequest">Annehmen</a>';
                 }
                 else{
-                    echo '<a href="functions.php?action=send_req&id='.$user_data->id.'" class="req_actionBtn sendRequest">Send Request</a>';
+                    echo '<a href="functions.php?action=send_req&id='.$user_data->id.'" class="req_actionBtn sendRequest">Anfrage senden</a>';
                 }
                 ?>
         
             </div>
         </div>
      
-        <p class="site_link"><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
+        
     </div>
 </body>
 </html>

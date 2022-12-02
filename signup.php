@@ -21,15 +21,15 @@ if(isset($_SESSION['email'])){
 </head>
 <body>
   <div class="main_container login_signup_container">
-    <h1>Sign Up</h1>
+    <h1>Registrieren</h1>
     <form action="" method="POST" novalidate>
-      <label for="username">Full Name</label>
-      <input type="text" id="username" name="username" spellcheck="false" placeholder="Enter your full name" required>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" spellcheck="false" placeholder="Enter your email address" required>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      <input type="submit" value="Sign Up">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="username" spellcheck="false" placeholder="Gebe deinen Namen ein" required>
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" spellcheck="false" placeholder="Gebe deine E-Mail ein" required>
+      <label for="password">Passwort</label>
+      <input type="password" id="password" name="password" placeholder="Gebe dein Passwort ein" required>
+      <input type="submit" value="Registrieren">
       <a href="index.php" class="form_link">Login</a>
     </form>
     <div>  
@@ -42,7 +42,7 @@ if(isset($_SESSION['email'])){
         }
       ?>    
     </div>
-    <p><a href="https://www.webtutorials.me">Webtutorials.ME</a></p>
+    
   </div>
 </body>
 </html>
