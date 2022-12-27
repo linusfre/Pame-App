@@ -40,6 +40,7 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
         <nav>
             <ul>
                 <li><a href="profile.php" rel="noopener noreferrer" class="active">Home</a></li>
+                <li><a href="party.php" rel="noopener noreferrer">Party erstellen<span class="badge"></span></a></li>
                 <li><a href="notifications.php" rel="noopener noreferrer">Anfragen<span class="badge <?php
                 if($get_req_num > 0){
                     echo 'redBadge';
@@ -68,7 +69,6 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
                 ?>
             </div>
         </div>
-        
     </div>
 </body>
 </html>
